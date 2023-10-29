@@ -98,10 +98,9 @@ class ConversionHeader
 	 */
 	public function addUsesColumn($name)
 	{
-		
-		if (in_array($name, self::$availableColumns)) {
-			$this->usesColumns[] = $name;
-		}
+        if (in_array($name, self::$availableColumns) && !in_array($name, $this->usesColumns)) {
+            $this->usesColumns[] = $name;
+        }
 	}
 	
 	/**
